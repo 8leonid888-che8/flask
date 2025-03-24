@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet"
+          href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        .grey_color {color:  #808080;}
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#"><h1>Миссия Колонизация Марса</h1></a>
+        <span class="ml-auto">Mars One</span>
+    </div>
+</nav>
+<h5 class="grey_color">И на Марсе будут яблони цвести!</h5>
+<!-- Begin page content -->
+<main role="main">
+    {% block content %}{% endblock %}
+</main>
+</body>
+</html>
+

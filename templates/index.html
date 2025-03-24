@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class = "text-center">
+    <h1>Works log</h1>
+    {% for i in data %}
+    <h2 class="text-center">Action # {{i[0]}}</h2>
+
+    <table class="table w-75 mx-auto text-center">
+  <thead>
+    <tr class="table-secondary">
+      <th scope="col">Title of activity</th>
+      <th scope="col">Team leader</th>
+      <th scope="col">Duration</th>
+      <th scope="col">List of collaborations</th>
+      <th scope="col">is finished</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="table-primary">{{i[1]}}</td>
+      <td class="table-primary">{{i[2]}}</td>
+      <td class="table-primary">{{i[3]}}</td>
+      <td class="table-primary">{{i[4]}}</td>
+      <td class="table-danger">{{i[5]}}</td>
+    </tr>
+  </tbody>
+    </table>
+</div>
+
+    {% endfor %}
+</div>
+{% endblock %}

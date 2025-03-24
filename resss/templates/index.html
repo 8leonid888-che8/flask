@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+
+<style>
+    .image-size {
+        width: 100%; /* Задает ширину изображения 100% от ячейки */
+        height: auto; /* Сохраняет пропорции изображения */
+        display: block; /* Убирает пробелы под изображением */
+    }
+    .color-cell {
+        background-color: orange; /* Цвет заливки */
+        width: 200px; /* Фиксированная ширина ячейки */
+        height: 150px; /* Фиксированная высота ячейки */
+    }
+    table {
+        border-collapse: collapse; /* Убирает пробелы между ячейками */
+        width: 100%; /* Задает ширину таблицы */
+    }
+    td {
+        padding: 0; /* Убирает отступы в ячейках */
+        margin: 0; /* Убирает внешние отступы */
+    }
+</style>
+
+<center><h1>Оформление каюты</h1></center>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<div class="container mt-4">
+    <table class="table table-secondary text-center">
+        <thead>
+            <tr>
+                <th scope="col">Цвет стен</th>
+                <th scope="col">Житель</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><img src="{{ url_for('static', filename='img/young.jpg') }}" class="image-size"></td>
+                <td class="color-cell"></td> <!-- Ячейка с цветом -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}
