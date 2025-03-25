@@ -22,7 +22,11 @@
       <td class="table-primary">{{i[2]}}</td>
       <td class="table-primary">{{i[3]}}</td>
       <td class="table-primary">{{i[4]}}</td>
-      <td class="table-danger">{{i[5]}}</td>
+        {% if i[5] == "is finished" %}
+        <td class="table-success">{{i[5]}}</td>
+        {% else %}
+       <td class="table-danger">{{i[5]}}</td>
+        {% endif %}
     </tr>
   </tbody>
     </table>

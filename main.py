@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from data import db_session
+from data.users import User
 from data.db_session import global_init, create_session
 from data.jobs import Jobs
 
@@ -14,8 +15,10 @@ def is_finished(f):
     else:
         return "is not finished"
 
-for i in db_sees.query(Jobs).all():
-    data.append([i.id, i.job, i.team_leader, i.work_size, i.collaborators, is_finished(i.is_finished)])
+for job in db_sees.query(Jobs).all():
+    team_leader = db_sees.query(User).filter(User.id == job.team_leader).first()
+    team_leader_name = f"{team_leader.surname} {team_leader.name}"
+    data.append([job.id, job.job, team_leader_name, job.work_size, job.collaborators, is_finished(job.is_finished)])
 
 @app.route("/")
 def start():
